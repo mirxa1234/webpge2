@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Olympic Players Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #eee;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .player {
+      cursor: pointer;
+      border: 1px solid #aaa;
+      padding: 10px;
+      background: white;
+      width: 150px;
+    }
+
+    .player img {
+      width: 100%;
+      height: auto;
+    }
+
+    .history {
+      margin-top: 20px;
+      display: none;
+      background: white;
+      padding: 10px;
+      border: 1px solid #aaa;
+    }
+
+    .history img {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+
+    .player2{
+        height: 259px;
+        width: 258Px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Olympic Players Gallery</h2>
+
+  <div class="gallery">
+    <div class="player1" onclick="showHistory('usain')">
+      <img src="img/Usain Bolt.webp" alt="Usain Bolt">
+      <p>Usain Bolt</p>
+    </div>
+    <div class="player2" onclick="showHistory('phelps')">
+      <img src="img/Michael Phelps.jpg" alt="Michael Phelps">
+      <p>Michael Phelps</p>
+    </div>
+    <div class="player3" onclick="showHistory('simone')">
+      <img src="img/Simone Biles.jpg" alt="Simone Biles">
+      <p>Simone Biles</p>
+    </div>
+    <div class="player4" onclick="showHistory('arshad')">
+      <img src="img/Arshad Nadeem.jpg" alt="Arshad Nadeem">
+      <p>Arshad Nadeem</p>
+    </div>
+    <div class="player5" onclick="showHistory('neeraj')">
+      <img src="img/Neeraj Chopra.jpg" alt="Neeraj Chopra">
+      <p>Neeraj Chopra</p>
+    </div>
+  </div>
+
+  <div class="history" id="historyBox">
+    <img id="playerImg" src="" alt="">
+    <h3 id="playerName"></h3>
+    <p id="playerHistory"></p>
+  </div>
+
+  <script>
+    const players = {
+      usain: {
+        name: "Usain Bolt",
+        image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Usain_Bolt_16082009_Berlin_200m.jpg",
+        history: "Usain Bolt is a sprinter from Jamaica. He won 8 Olympic gold medals."
+      },
+      phelps: {
+        name: "Michael Phelps",
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Michael_Phelps_Rio_Olympics_2016.jpg",
+        history: "Michael Phelps is a swimmer from USA. He has 23 Olympic gold medals."
+      },
+      simone: {
+        name: "Simone Biles",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/63/Simone_Biles_2016.jpg",
+        history: "Simone Biles is a gymnast from USA. She has 7 Olympic medals."
+      },
+      arshad: {
+        name: "Arshad Nadeem",
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Arshad_Nadeem_2022.jpg",
+        history: "Arshad Nadeem is a javelin thrower from Pakistan. He made history by reaching Olympic finals and won gold in Commonwealth Games."
+      },
+      neeraj: {
+        name: "Neeraj Chopra",
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/85/Neeraj_Chopra_IAAF_2018.jpg",
+        history: "Neeraj Chopra is an Indian javelin thrower. He won India's first Olympic gold in athletics at Tokyo 2020."
+      }
+    };
+
+    
+    function showHistory(id) {
+      const p = players[id];
+      document.getElementById('playerImg').src = p.image;
+      document.getElementById('playerName').textContent = p.name;
+      document.getElementById('playerHistory').textContent = p.history;
+      document.getElementById('historyBox').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
